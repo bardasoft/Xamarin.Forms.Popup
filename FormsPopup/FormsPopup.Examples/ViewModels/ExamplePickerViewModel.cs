@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MWX.XamForms.Popup.Examples.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,17 +26,17 @@ namespace MWX.XamForms.Popup.Examples.ViewModels
             {
                 new PickerItem
                 {
-                    Index = 1,
-                    Name = "CodedPopupExample",
-                    Description = "Sample with coded Content",
-                    Page2Show = new CodedPopupExample()
-                },
-                new PickerItem
-                {
                     Index = 2,
                     Name = "CodedSimpleExample",
                     Description = "very simple Example",
                     Page2Show = new CodedSimpleExample()
+                },
+                new PickerItem
+                {
+                    Index = 1,
+                    Name = "CodedPopupExample",
+                    Description = "Sample with coded Content",
+                    Page2Show = new CodedPopupExample()
                 },
                 new PickerItem
                 {
@@ -56,7 +57,7 @@ namespace MWX.XamForms.Popup.Examples.ViewModels
                     Index = 4,
                     Name = "TemplatedPicker",
                     Description = "Example for the TemplatedPicker",
-                    Page2Show = new NavigationPage(new NavigationExample())
+                    Page2Show = new TemplatedPickerExample()
 
                 }
             };

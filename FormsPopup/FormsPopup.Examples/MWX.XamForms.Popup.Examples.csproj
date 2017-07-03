@@ -47,9 +47,13 @@
       <DependentUpon>ExamplePicker.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\NavigationExample.cs" />
+    <Compile Include="Pages\TemplatedPickerExample.xaml.cs">
+      <DependentUpon>TemplatedPickerExample.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ExamplePickerViewModel.cs" />
+    <Compile Include="ViewModels\TemplatedPickerExampleViewModel.cs" />
     <Compile Include="XamlPopupExample.xaml.cs">
       <DependentUpon>XamlPopupExample.xaml</DependentUpon>
     </Compile>
@@ -86,7 +90,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\TemplatedPickerExample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ExamplePicker.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

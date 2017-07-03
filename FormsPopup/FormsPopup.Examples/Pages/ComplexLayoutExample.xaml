@@ -6,6 +6,7 @@
   
   <StackLayout>
     <Button Text="Show Popup" Clicked="Button_OnClicked"></Button>
+    <Button Text="Back to Examples" Clicked="Back_OnClicked"/>
   </StackLayout>
   <ex:PopupPage.Popups>
     

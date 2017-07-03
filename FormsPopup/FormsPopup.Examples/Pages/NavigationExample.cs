@@ -40,6 +40,8 @@ namespace MWX.XamForms.Popup.Examples
             btnNavigate.Clicked += BtnNavigate_Clicked;
             _popup.Tapped += Popup_Tapped;
 
+            var backButton = new Button { Text = "Back To Examples" };
+            backButton.Clicked += (s, e) => App.BackToExamplePickerPage();
 
             // Notice _popup is not added to this ContentPage
             Content = new StackLayout
@@ -49,7 +51,7 @@ namespace MWX.XamForms.Popup.Examples
                 Children =
                 {
                     btnNavigate,
-                    btnPopup
+                    btnPopup, backButton
                 }
             };
 

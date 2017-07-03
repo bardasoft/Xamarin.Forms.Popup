@@ -42,12 +42,16 @@ namespace MWX.XamForms.Popup.Examples
 			var button = new Button { Text = "Show Popup" };
             button.Clicked += (s, e) => popup.Show();
 
+            var backButton = new Button { Text = "Back To Examples" };
+            backButton.Clicked += (s, e) => App.BackToExamplePickerPage();
+
             var stack = new StackLayout
             {
                 Children =
                 {
                     new Entry { Text = "Some input..."},
-                    button
+                    button,
+                    backButton
                 }
             };
 

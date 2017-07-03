@@ -15,6 +15,10 @@ namespace MWX.XamForms.Popup.Examples
             popup1.Show();
         }
 
+        protected void Back_OnClicked(object sender, EventArgs e)
+        {
+            App.BackToExamplePickerPage();
+        }
 
         private void Popup1_Tapped(object sender, PopupTappedEventArgs e)
         {

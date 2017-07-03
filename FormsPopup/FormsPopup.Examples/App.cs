@@ -14,6 +14,7 @@ namespace MWX.XamForms.Popup.Examples
 
     public class App : Application
     {
+        static ExamplePicker pickerPage = new ExamplePicker();
         public App()
         {
             /*
@@ -24,10 +25,13 @@ namespace MWX.XamForms.Popup.Examples
              *  MainPage = new ComplexLayoutExample();
              */
 
-            MainPage = new ExamplePicker();
+            MainPage = pickerPage;
         }
 
-
+        public static void BackToExamplePickerPage()
+        {
+            Device.BeginInvokeOnMainThread(() => App.Current.MainPage = pickerPage);
+        }
 
         protected override void OnStart()
         {

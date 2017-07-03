@@ -9,7 +9,9 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin Forms PopUp Example!" />
+            <Label Text="Welcome to Xamarin Forms PopUp Example!" FontSize="Large" />
+
+            <Label Text="Below you can see an TemplatedPicker to select one of the Examples." />
 
             <pop:TemplatedPicker ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" ListViewRowHeight="60">
                 <pop:TemplatedPicker.CellTemplate>

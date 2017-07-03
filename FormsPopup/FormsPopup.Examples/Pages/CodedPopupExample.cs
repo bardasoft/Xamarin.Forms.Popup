@@ -29,6 +29,9 @@ namespace MWX.XamForms.Popup.Examples
                 BackgroundColor = Color.White,
             };
 
+            var backButton = new Button { Text = "Back To Examples" };
+            backButton.Clicked += (s, e) => App.BackToExamplePickerPage();
+
             _popup1 = new Popup
             {
                 XPositionRequest = 0.5,
@@ -93,7 +96,7 @@ namespace MWX.XamForms.Popup.Examples
                         },
                     },
 
-                    showPopup
+                    showPopup, backButton
                 }
             };
 

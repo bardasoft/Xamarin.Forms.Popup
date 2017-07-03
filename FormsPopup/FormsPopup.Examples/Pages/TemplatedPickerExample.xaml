@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pop="clr-namespace:MWX.XamForms.Popup;assembly=MWX.XamForms.Popup"
+             xmlns:vm="clr-namespace:MWX.XamForms.Popup.Examples.ViewModels"
+             x:Class="MWX.XamForms.Popup.Examples.Pages.TemplatedPickerExample">
+    <ContentPage.BindingContext>
+        <vm:TemplatedPickerExampleViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="TemplatedPicker Examples" FontSize="Large" />
+
+            <Label Text="Normal Template without Empty Template ListViewRowHeight=60" />
+
+            <pop:TemplatedPicker ItemsSource="{Binding Items}" ListViewRowHeight="60">
+                <pop:TemplatedPicker.CellTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" FontSize="Medium" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" FontSize="Small" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </pop:TemplatedPicker.CellTemplate>
+            </pop:TemplatedPicker>
+
+            <Label Text="Normal Template with Empty Template ListViewRowHeight=60 green unselectButton" />
+
+            <pop:TemplatedPicker ItemsSource="{Binding Items}" ListViewRowHeight="60" UnSelectButtonBackgroundColor="Green">
+                <pop:TemplatedPicker.CellTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" FontSize="Medium" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" FontSize="Small" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </pop:TemplatedPicker.CellTemplate>
+                <pop:TemplatedPicker.EmptyTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                                there is nothing selected - this is the EmptyTemplate
+                            </Label>
+                        </ViewCell>
+                    </DataTemplate>
+                </pop:TemplatedPicker.EmptyTemplate>
+            </pop:TemplatedPicker>
+
+            <Label Text="Normal Template without Empty Template ListViewRowHeight=80 without unselectButton" />
+
+            <pop:TemplatedPicker ItemsSource="{Binding Items}" ListViewRowHeight="80" UnSelectButtonVisible="False">
+                <pop:TemplatedPicker.CellTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" FontSize="Medium" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" FontSize="Small" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </pop:TemplatedPicker.CellTemplate>
+            </pop:TemplatedPicker>
+
+
+            <Button Text="Back to Examples" Command="{Binding BackCommand}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
