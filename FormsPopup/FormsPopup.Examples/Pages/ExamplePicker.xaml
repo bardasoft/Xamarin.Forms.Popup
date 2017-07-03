@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pop="clr-namespace:MWX.XamForms.Popup;assembly=MWX.XamForms.Popup"
+             xmlns:vm="clr-namespace:MWX.XamForms.Popup.Examples.ViewModels"
+             x:Class="MWX.XamForms.Popup.Examples.Pages.ExamplePicker">
+    <ContentPage.BindingContext>
+        <vm:ExamplePickerViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin Forms PopUp Example!" />
+
+            <pop:TemplatedPicker ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" ListViewRowHeight="60">
+                <pop:TemplatedPicker.CellTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.RowSpan="2" Text="{Binding Index}" VerticalTextAlignment="Center" />
+
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" FontSize="Medium" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" FontSize="Small" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>   
+                </pop:TemplatedPicker.CellTemplate>
+                <pop:TemplatedPicker.EmptyTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                                Please select a Sample Page to show!
+                            </Label>
+                        </ViewCell>
+                    </DataTemplate>
+                </pop:TemplatedPicker.EmptyTemplate>
+            </pop:TemplatedPicker>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

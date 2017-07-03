@@ -636,8 +636,10 @@ namespace MWX.XamForms.Popup
                 //cont.InputTransparent = true;
 
                 lv.ItemTemplate = this.CellTemplate;
-                SelectedItem = null;
-                lv.ItemsSource = null;
+
+                // to avoid nullreference excetion in Xamarin.Forms.ListView
+                //lv.SelectedItem = null;
+                //lv.ItemsSource = null;
                 lv.ItemsSource = ItemsSource;
                 lv.SelectedItem = SelectedItem;
 

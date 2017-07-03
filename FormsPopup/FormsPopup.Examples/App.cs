@@ -1,7 +1,17 @@
-﻿using Xamarin.Forms;
+﻿using MWX.XamForms.Popup.Examples.Pages;
+using Xamarin.Forms;
 
 namespace MWX.XamForms.Popup.Examples
 {
+    public enum ExamplePage
+    {
+        CodedPopupExample,
+        CodedSimpleExample,
+        NavigationPage,
+        ComplexLayoutExample,
+        TemplatedPicker,
+    }
+
     public class App : Application
     {
         public App()
@@ -11,12 +21,13 @@ namespace MWX.XamForms.Popup.Examples
              *  MainPage = new CodedPopupExample();
              *  MainPage = new CodedSimpleExample();
              *  MainPage = new NavigationPage(new NavigationExample());
-             *  MainPage = new CodedPopupExample();
              *  MainPage = new ComplexLayoutExample();
              */
 
-            MainPage = new CodedPopupExample();
+            MainPage = new ExamplePicker();
         }
+
+
 
         protected override void OnStart()
         {
