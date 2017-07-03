@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace FormsPopup.iOS
+namespace MWX.XamForms.Popup.iOS
 {
     public class Application
     {

@@ -6,9 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using FormsPopup.Examples;
+using MWX.XamForms.Popup.Examples;
 
-namespace FormsPopup.Droid
+namespace MWX.XamForms.Popup.Droid
 {
     [Activity(Label = "FormsPopup", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity

@@ -384,6 +384,8 @@ namespace MWX.XamForms.Popup
 			}
 
 			var parent = Parent.FindParent<Layout>();
+            if (parent == null) throw new PopUpNotInitializedException();
+
 		    parent?.RaiseChild(_popupView);
 
 		    var handlerResponse = OnShowing();
