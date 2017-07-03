@@ -22,8 +22,6 @@ namespace MWX.XamForms.Popup.Examples.ViewModels
             set { _SelectableItemsArray = value; }
         }
 
-
-
         public TemplatedPickerExampleViewModel()
         {
             BackCommand = new Command(() => App.BackToExamplePickerPage());
