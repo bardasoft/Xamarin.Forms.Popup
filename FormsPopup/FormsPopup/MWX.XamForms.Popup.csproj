@@ -38,6 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="PopUpInitializer.cs" />
     <Compile Include="PopUpNotInitializedException.cs" />
     <Compile Include="TapGestureRecognizerVisitor.cs" />
     <Compile Include="Popup.cs" />

@@ -14,10 +14,27 @@ namespace MWX.XamForms.Popup.Examples.ViewModels
         public List<PickerItem> Items { get; set; }
 
 
+        private PickerItemEntryInList[] _SelectableItemsArray;
+
+        public PickerItemEntryInList[] SelectableItemsArray
+        {
+            get { return _SelectableItemsArray; }
+            set { _SelectableItemsArray = value; }
+        }
+
+
+
         public TemplatedPickerExampleViewModel()
         {
             BackCommand = new Command(() => App.BackToExamplePickerPage());
             Items = new List<PickerItem>();
+
+            SelectableItemsArray = new PickerItemEntryInList[5];
+
+            for (int i = 0; i < SelectableItemsArray.Length; i++)
+            {
+                SelectableItemsArray[i] = new PickerItemEntryInList();
+            }
 
             var colors = new Color[]
             {
@@ -54,6 +71,7 @@ namespace MWX.XamForms.Popup.Examples.ViewModels
                 Color.Plum,
             };
 
+
             for (int i = 0; i < 10; i++)
             {
                 Items.Add(new PickerItem { Title = $"Title {i}", Description = $"Description {i}", BackColor = colors[i] });
@@ -66,6 +84,11 @@ namespace MWX.XamForms.Popup.Examples.ViewModels
             public string Description { get; set; }
 
             public Color BackColor { get; set; }
+        }
+
+        public class PickerItemEntryInList
+        {
+            public PickerItem Item { get; set; }
         }
     }
 }

@@ -50,6 +50,9 @@
     <Compile Include="Pages\TemplatedPickerExample.xaml.cs">
       <DependentUpon>TemplatedPickerExample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\TemplatedPickerList.xaml.cs">
+      <DependentUpon>TemplatedPickerList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ExamplePickerViewModel.cs" />
@@ -98,6 +101,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ExamplePicker.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\TemplatedPickerList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

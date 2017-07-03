@@ -59,6 +59,14 @@ namespace MWX.XamForms.Popup.Examples.ViewModels
                     Description = "Example for the TemplatedPicker",
                     Page2Show = new TemplatedPickerExample()
 
+                },
+                new PickerItem
+                {
+                    Index = 4,
+                    Name = "Picker in ListView",
+                    Description = "Example for the TemplatedPicker in a ListView",
+                    Page2Show = new TemplatedPickerList()
+
                 }
             };
         }

@@ -9,7 +9,7 @@ namespace MWX.XamForms.Popup
 If the Picker is part of a dynamically loaded ressource - like in a ListView-Template - you need an empty invisble Picker on your the ContentPage!
 This invisible Picker is needed directly on the Page to intercept the appearing events correctly to be able to create an overlay on the Page.
 
-Simply create a <TemplatedPicker IsVisible=""False"" /> on directly your ContentPage to make an initialisation possible!
+Simply create a <PopUpInitializer IsVisible=""False"" /> on directly your ContentPage to make an initialisation possible!
 ";
         public PopUpNotInitializedException() : this(ErrorMessage)
         { }
