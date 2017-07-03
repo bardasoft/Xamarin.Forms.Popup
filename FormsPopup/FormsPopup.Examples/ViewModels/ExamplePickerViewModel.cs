@@ -66,23 +66,27 @@ namespace MWX.XamForms.Popup.Examples.ViewModels
         {
             if (selectedItem == null) return;
 
-            //OnPropertyChanged(nameof(SelectedItem));
+            // that can cause an endless loop ! be careful ;)
+            // OnPropertyChanged(nameof(SelectedItem));
 
             Task.Run(async () =>
             {
                 await Task.Delay(200);
-                Device.BeginInvokeOnMainThread(() => App.Current.MainPage = selectedItem.Page2Show);
+                if (selectedItem.Page2Show != null)
+                {
+                    Device.BeginInvokeOnMainThread(() => App.Current.MainPage = selectedItem.Page2Show);
+                }
             });
         }
-}
+    }
 
-public class PickerItem
-{
-    public int Index { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
+    public class PickerItem
+    {
+        public int Index { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
 
-    public Page Page2Show { get; set; }
-}
+        public Page Page2Show { get; set; }
+    }
 
 }

@@ -26,7 +26,7 @@
                                     <ColumnDefinition Width="20"/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" FontSize="Medium" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" FontSize="Medium" BackgroundColor="{Binding BackColor}" />
                                 <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" FontSize="Small" />
                             </Grid>
                         </ViewCell>
@@ -49,7 +49,7 @@
                                     <ColumnDefinition Width="20"/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" FontSize="Medium" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" FontSize="Medium"  BackgroundColor="{Binding BackColor}" />
                                 <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" FontSize="Small" />
                             </Grid>
                         </ViewCell>
@@ -81,7 +81,7 @@
                                     <ColumnDefinition Width="20"/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" FontSize="Medium" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" FontSize="Medium" BackgroundColor="{Binding BackColor}"/>
                                 <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" FontSize="Small" />
                             </Grid>
                         </ViewCell>
