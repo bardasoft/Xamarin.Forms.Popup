@@ -56,9 +56,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FormsPopup\FormsPopup.csproj">
+    <ProjectReference Include="..\FormsPopup\MWX.XamForms.Popup.csproj">
       <Project>{CA22517D-4B83-43F5-A23F-9207229D2024}</Project>
-      <Name>FormsPopup</Name>
+      <Name>MWX.XamForms.Popup</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
