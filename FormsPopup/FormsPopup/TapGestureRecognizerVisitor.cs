@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace FormsPopup
+namespace MWX.XamForms.Popup
 {
 	internal static class TapGestureRecognizerVisitor
 	{

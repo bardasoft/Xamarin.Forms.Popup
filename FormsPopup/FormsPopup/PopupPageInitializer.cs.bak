@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
-namespace MWX.XamForms.Popup
+namespace FormsPopup
 {
 	/// <summary>
 	/// Initialize the <see cref="Popup"/> views that are shown from a <seealso cref="ContentPage"/>
@@ -83,7 +83,7 @@ namespace MWX.XamForms.Popup
 			}
 		}
 
-        bool initialized = false;
+
 		private void ParentPage_Appearing(object sender, EventArgs e)
 		{
 			Initialize();
@@ -93,52 +93,6 @@ namespace MWX.XamForms.Popup
 				_absContent.Children.Add(popup, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
 				popup.OnInitializing();
 			}
-            initialized = true;
-
-        }
-
-        internal void LateInit()
-        {
-            if (!initialized) throw new NotSupportedException(@"The TemplatedPicker cannot get initialized!
-
-If the Picker is part of a dynamically loaded ressource - like in a ListView-Template - you need an empty invisble Picker on your the ContentPage!
-This invisible Picker is needed directly on the Page to intercept the appearing events correctly to be able to create an overlay on the Page.
-
-Simply create a <TemplatedPicker IsVisible=""False"" /> on directly your ContentPage to make an initialisation possible!
-");
-            foreach (var popup in Popups)
-            {
-                if (!_absContent.Children.Contains(popup))
-                {
-                    _absContent.Children.Add(popup, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
-                    popup.OnInitializing();
-                }
-            }
-        }
-
-        static Dictionary<ContentPage, PopupPageInitializer> cache = new Dictionary<ContentPage, PopupPageInitializer>();
-        public static PopupPageInitializer GetPopUpInitializer(ContentPage page, Popup popup, bool lateInit)
-        {
-            if (cache.ContainsKey(page))
-            {
-                var init = cache[page];
-                init.Add(popup);
-                return init;
-            }
-            else
-            {
-                if (lateInit) throw new ArgumentException(@"Cannot initialize without an Picker on the Page!
-
-please add a empty invisible TemplatedPicker on the top of the Page!
-for example:
-<post:TemplatedPicker x:Name=""notShownPickerForInit"" IsVisible=""false"" />
-
-Thank you!");
-
-                var init = new PopupPageInitializer(page) { popup };
-                cache.Add(page, init);
-                return init;
-            }
-        }
-    }
+		}
+	}
 }

@@ -2,7 +2,7 @@
 using System.Collections.Specialized;
 using Xamarin.Forms;
 
-namespace FormsPopup
+namespace MWX.XamForms.Popup
 {
 	/// <summary>
 	/// One of two methods must be taken to utilize the <see cref="Popup"/> view.

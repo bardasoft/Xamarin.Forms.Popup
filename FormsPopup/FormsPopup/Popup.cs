@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace FormsPopup
+namespace MWX.XamForms.Popup
 {
 	/// <summary>
 	/// Popup view to be displayed over a <see cref="ContentPage"/>.

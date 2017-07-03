@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace FormsPopup.Examples
+namespace MWX.XamForms.Popup.Examples
 {
     public class CodedPopupExample : ContentPage
     {

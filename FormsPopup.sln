@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MWX.XamForms.Popup", "FormsPopup\FormsPopup\MWX.XamForms.Popup.csproj", "{CA22517D-4B83-43F5-A23F-9207229D2024}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MWX.XamForms.Popup.iOS", "FormsPopup\FormsPopup.iOS\MWX.XamForms.Popup.iOS.csproj", "{ACAD5952-BF6D-4F5A-9ABE-E902865B9A90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MWX.XamForms.Popup.Examples.iOS", "FormsPopup\FormsPopup.iOS\MWX.XamForms.Popup.Examples.iOS.csproj", "{ACAD5952-BF6D-4F5A-9ABE-E902865B9A90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MWX.XamForms.Popup.Droid", "FormsPopup\FormsPopup.Droid\MWX.XamForms.Popup.Droid.csproj", "{34D6EE8D-1671-4A69-9736-A3BD774037B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MWX.XamForms.Popup.Examples.Droid", "FormsPopup\FormsPopup.Droid\MWX.XamForms.Popup.Examples.Droid.csproj", "{34D6EE8D-1671-4A69-9736-A3BD774037B9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{632435A2-E61B-4422-A2F2-7145CA6A074D}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,6 +17,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{632435
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MWX.XamForms.Popup.Examples", "FormsPopup\FormsPopup.Examples\MWX.XamForms.Popup.Examples.csproj", "{67F9D3A8-F71E-4428-913F-C37AE82CDB24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D2383BAE-36FC-4B77-9846-A5FA6B9DCDEE}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

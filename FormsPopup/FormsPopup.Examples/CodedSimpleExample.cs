@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace FormsPopup.Examples
+namespace MWX.XamForms.Popup.Examples
 {
     public class CodedSimpleExample : ContentPage
     {

@@ -6,9 +6,9 @@
     <ProjectGuid>{ACAD5952-BF6D-4F5A-9ABE-E902865B9A90}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FormsPopup.iOS</RootNamespace>
+    <RootNamespace>MWX.XamForms.Popup.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>FormsPopupiOS</AssemblyName>
+    <AssemblyName>MWXXFPopupiOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>

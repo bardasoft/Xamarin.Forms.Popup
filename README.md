@@ -2,14 +2,17 @@
 # Xamarin.Forms Popup View
 
 This repository houses an example of using the Xamarin.Forms API to create a popup view.
-I chose not to use any platform APIs (Xamarin.Android or Xamarin.iOS) while implementing the view, as I wished to experiment with the framework. That said, it's still a fairly *featureful* implementation.
+
+It's inspired by the FormsPopUp implementation of Michael Davis - https://github.com/michaeled/FormsPopup
+
+But i fixed some issues and extended it with an TemplatedPicker 
 
 **Projects**
 
-* FormsPopup (The `Popup` implementation)
-* FormsPopup.Examples
-* FormsPopup.Droid
-* FormsPopup.iOS
+* MWX.XamForms.Popup                   - (The `Popup` implementation)
+* MWX.XamForms.Popup.Examples          - the Xamarin Forms Sample Implementation
+* MWX.XamForms.Popup.Examples.Droid    - the Andorid Host Projekt for the Example
+* MWX.XamForms.Popup.Examples.iOS      - the iOS Host Projekt for the Example
 
 ## A short note ##
 

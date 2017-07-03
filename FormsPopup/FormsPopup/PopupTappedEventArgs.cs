@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace FormsPopup
+namespace MWX.XamForms.Popup
 {
 	/// <summary>
 	/// Represents the available event data, when the <see cref="FormsPopup.Popup.Tapped"/> event is invoked. 

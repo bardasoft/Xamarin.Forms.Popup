@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ex:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FormsPopup.Examples.ComplexLayoutExample"
-             	xmlns:ex="clr-namespace:FormsPopup;assembly=FormsPopup">
+             x:Class="MWX.XamForms.Popup.Examples.ComplexLayoutExample"
+             	xmlns:ex="clr-namespace:MWX.XamForms.Popup;assembly=MWX.XamForms.Popup">
   
   <StackLayout>
     <Button Text="Show Popup" Clicked="Button_OnClicked"></Button>

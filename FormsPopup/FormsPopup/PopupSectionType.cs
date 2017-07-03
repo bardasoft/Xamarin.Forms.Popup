@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FormsPopup
+namespace MWX.XamForms.Popup
 {
     /// <summary>
     /// Used to identify the logical sections of a <see cref="Popup"/>.

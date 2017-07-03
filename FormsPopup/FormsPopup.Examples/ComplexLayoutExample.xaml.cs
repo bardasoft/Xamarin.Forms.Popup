@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FormsPopup.Examples
+namespace MWX.XamForms.Popup.Examples
 {
     public partial class ComplexLayoutExample
     {

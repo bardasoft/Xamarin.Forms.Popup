@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FormsPopup
+namespace MWX.XamForms.Popup
 {
 	/// <summary>
 	/// Represents the available event data, when the <see cref="Popup.Hiding"/> event is invoked. 
