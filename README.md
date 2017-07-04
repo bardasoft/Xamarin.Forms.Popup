@@ -70,7 +70,7 @@ you can fully bind it your ViewModel:
 
 ## Dynamic Content
 
-If you want to use the Picker in a ListView or other dynamic Controls, you need to embed it into a PopupPage or use a PopUpInitializer directly on the Page to initialize the PopUp.
+If you want to use the Picker or a PopUp in a ListView or other dynamic Controls, you need to embed it into a PopupPage or use a PopUpInitializer directly on the Page to initialize the PopUp.
 
 ```xaml
             <pop:PopUpInitializer />
@@ -104,6 +104,13 @@ If you want to use the Picker in a ListView or other dynamic Controls, you need 
             </ListView>
 ```
 
+## Normal PopUp's
+
+You can also use the normal PopUps.
+
+The normal PopUps need CodeBehind in the Page so fully MVVM supported.
+
+Here is a Sample:
 
 ```csharp
 public class CodedSimpleExample : ContentPage
@@ -148,7 +155,7 @@ public class CodedSimpleExample : ContentPage
 }
 ```
 
-Two examples have been added to the `FormsPopup.Examples` project to demonstrate this point. Reference either `CodedPopupExample.cs` or `XamlPopupExample.xaml/XamlPopupExample.cs`.
+Two examples have been added to the `MWX.XamForms.Popup.Examples` project to demonstrate this point. Reference either `CodedPopupExample.cs` or `XamlPopupExample.xaml/XamlPopupExample.cs`.
 
 ## Sizing and Placement
 
