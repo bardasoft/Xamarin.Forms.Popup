@@ -31,7 +31,79 @@ The current implementation requires either one of two conditions be met before y
 1. The visible page must extend from the `PopupPage` class.
 2. Any visible page that does not extend from `PopupPage` must instantiate an object of type `PopupPageInitializer` after the page's content has been set. This is easier than it seems:
 
-**Example**
+**Examples**
+
+There is a sample project in the solution where you can test it.
+
+## Xaml Usage
+
+you need to embed it into your Xaml like this
+```xaml
+<ContentPage ...
+             xmlns:pop="clr-namespace:MWX.XamForms.Popup;assembly=MWX.XamForms.Popup"
+             ...
+             >
+```
+
+## TemplatedPicker
+
+you can fully bind it your ViewModel:
+```xaml
+            <pop:TemplatedPicker ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" ListViewRowHeight="60">
+                <pop:TemplatedPicker.CellTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+							... add your Template here ...
+                        </ViewCell>
+                    </DataTemplate>   
+                </pop:TemplatedPicker.CellTemplate>
+				<!-- optionally you can also configure an empty template that is shown when no item is selected. -->
+                <pop:TemplatedPicker.EmptyTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+							... add your Empty-Template here ...
+                        </ViewCell>
+                    </DataTemplate>
+                </pop:TemplatedPicker.EmptyTemplate>
+            </pop:TemplatedPicker>
+```
+
+## Dynamic Content
+
+If you want to use the Picker in a ListView or other dynamic Controls, you need to embed it into a PopupPage or use a PopUpInitializer directly on the Page to initialize the PopUp.
+
+```xaml
+            <pop:PopUpInitializer />
+
+            <ListView ItemsSource="{Binding SelectableItemsArray}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <pop:TemplatedPicker ItemsSource="{Binding Items, Source={x:Reference viewModel}}" SelectedItem="{Binding Item}" ListViewRowHeight="60">
+                                <pop:TemplatedPicker.CellTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition />
+                                                    <RowDefinition />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="20"/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" FontSize="Medium" BackgroundColor="{Binding BackColor}" />
+                                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" FontSize="Small" />
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </pop:TemplatedPicker.CellTemplate>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+```
+
 
 ```csharp
 public class CodedSimpleExample : ContentPage
