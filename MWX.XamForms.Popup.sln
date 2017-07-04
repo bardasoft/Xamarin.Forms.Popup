@@ -152,7 +152,6 @@ Global
 		{ACAD5952-BF6D-4F5A-9ABE-E902865B9A90}.BuildAgent|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{ACAD5952-BF6D-4F5A-9ABE-E902865B9A90}.BuildAgent|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{ACAD5952-BF6D-4F5A-9ABE-E902865B9A90}.BuildAgent|Mixed Platforms.ActiveCfg = Release|iPhone
-		{ACAD5952-BF6D-4F5A-9ABE-E902865B9A90}.BuildAgent|Mixed Platforms.Build.0 = Release|iPhone
 		{ACAD5952-BF6D-4F5A-9ABE-E902865B9A90}.BuildAgent|x64.ActiveCfg = Release|iPhoneSimulator
 		{ACAD5952-BF6D-4F5A-9ABE-E902865B9A90}.BuildAgent|x86.ActiveCfg = Release|iPhoneSimulator
 		{ACAD5952-BF6D-4F5A-9ABE-E902865B9A90}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
@@ -370,7 +369,6 @@ Global
 		{D312B725-7803-4BD9-AC99-722013F04E32}.BuildAgent|iPhone.ActiveCfg = Release|x86
 		{D312B725-7803-4BD9-AC99-722013F04E32}.BuildAgent|iPhoneSimulator.ActiveCfg = Release|x86
 		{D312B725-7803-4BD9-AC99-722013F04E32}.BuildAgent|Mixed Platforms.ActiveCfg = Release|x86
-		{D312B725-7803-4BD9-AC99-722013F04E32}.BuildAgent|Mixed Platforms.Build.0 = Release|x86
 		{D312B725-7803-4BD9-AC99-722013F04E32}.BuildAgent|Mixed Platforms.Deploy.0 = Release|x86
 		{D312B725-7803-4BD9-AC99-722013F04E32}.BuildAgent|x64.ActiveCfg = Release|x64
 		{D312B725-7803-4BD9-AC99-722013F04E32}.BuildAgent|x64.Build.0 = Release|x64
