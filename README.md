@@ -7,7 +7,13 @@ It's inspired and based on the FormsPopUp implementation of Michael Davis - http
 
 But i fixed some issues and extended it with an TemplatedPicker, which is correctly bindable and doesnt use any platformspecific components.
 
-**NuGet**
+
+Build State: ![alt text](https://mareks.visualstudio.com/_apis/public/build/definitions/b84582dc-7436-45e7-ac40-fa51eb92dc9a/13/badge "build state")
+
+**NuGet** 
+
+Released: [![NuGet Badge](https://buildstats.info/nuget/MWX.XamForms.Popup)](https://www.nuget.org/packages/MWX.XamForms.Popup/)
+Pre-Release: [![NuGet Badge](https://buildstats.info/nuget/MWX.XamForms.Popup?includePreReleases=true)](https://www.nuget.org/packages/MWX.XamForms.Popup/)
 
 The Control Library is available as NuGet Package MWX.XamForms.Popup here https://www.nuget.org/packages/MWX.XamForms.Popup/
 
@@ -305,6 +311,14 @@ At this moment, there are no default styles for the popup. Your views will inher
 
 
 More screenshots are available in the repository.
+
+## Who am i?
+
+My name is Stefan M. Marek and i develop Software for the Austian Post and for myself ;).
+
+please also visit my personal page:
+
+[![marekworks.at](https://marekworks.at/images/logo_small.svg "marekworks.at")<br/>Marekworks.at](https://marekworks.at) {style="text-align:center"}
 
 ## FAQ
 
