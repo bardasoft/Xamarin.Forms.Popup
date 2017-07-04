@@ -23,6 +23,7 @@ It's currently in prerelease state but will get released soon!
 ## A short note ##
 
 This project has a few documented issues. They are mostly related to iOS9.
+I cannot test everything in iOS because i don't have the test-devices.
 
 ## Initializing
 
@@ -37,7 +38,7 @@ There is a sample project in the solution where you can test it.
 
 ## Xaml Usage
 
-you need to embed it into your Xaml like this
+At first you need to import the namespace as a xmlns for the use in your Xaml.
 ```xaml
 <ContentPage ...
              xmlns:pop="clr-namespace:MWX.XamForms.Popup;assembly=MWX.XamForms.Popup"
@@ -47,7 +48,68 @@ you need to embed it into your Xaml like this
 
 ## TemplatedPicker
 
-you can fully bind it your ViewModel:
+The templated Picker is a full featured Picker, where you can use Templates for the Items in Selected View and the Popup ListBox.
+
+some Screenshors of the Picker in the SampleApp:
+
+![alt text](pictures/PickerExamples-Empty.png "Examples without Selection")
+![alt text](pictures/PickerExamples-Selection.png "Examples with Selection")
+
+Here is a overview how the Picker is composed:
+
+![alt text](pictures/PickerExamples-ExplainedPicker.png "Layout Overview")
+
+### Properties of the TemplatedPicker
+Here some of the Key Properties to Control:
+
+#### Templates:
+
+- CellTemplate - defines the Style of one Item in the SelectedView and in the ListBox.
+- EmptyTemplate - defines what should be displayed when nothing is selected.
+
+#### Data-Properties:
+
+- SelectedItem - returns or sets the currently selected Item
+- ItemsSource - List of the selectable Items
+
+#### Styling-Properties
+
+- PopUpWidthRequest - Relative Width of the PopUp ( between 0 .. 1 ) relative to the Page
+- PopUpHeightRequest - Relative Height of the PopUp ( between 0 .. 1 ) relative to the Page
+
+- HeaderBackgroundColor - BackgroundColor of the Header Part with the Title
+- HeaderText - Header Text
+- HeaderTextColor - Color of the Close Header-Text
+- HeaderPadding - Padding of the Header-Text
+- HeaderFontSize - Font Size of the Header-Text
+
+- DescriptionText - Text shown in the description
+- DescriptionFontSize - Font Size of the description
+
+- BodyPadding - Padding of the Body Content
+- BodyBackgroundColor - Background Color of the Body-Part with the 
+
+- ListViewRowHeight - Height of one Item
+
+- FooterBackgroundColor - Background color of the Footer-Part
+
+- UnSelectButtonVisible - true if the UnSelectButton (for no selection) should be visible
+- UnSelectButtonText - Text of the Unselect-Button
+- UnSelectButtonTextColor - TextColor of the Unselect-Button
+- UnSelectButtonBackgroundColor - Background Color of the Unselect-Button
+
+
+- CloseButtonText - Text of the Close Button
+- CloseButtonTextColor - Color of the Close Button-Text
+
+- SelectedOutlineColor - Outline Color of the selected Item (when the Picker is closed)
+- SelectedBackgroundColor - Background Color of the selected Item 
+
+- EmptyText - Text that should be displayed when no item is selected and no EmptyTemplate is provided.
+
+
+### MVVM
+You can fully bind it your ViewModel:
 ```xaml
             <pop:TemplatedPicker ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" ListViewRowHeight="60">
                 <pop:TemplatedPicker.CellTemplate>
@@ -238,8 +300,8 @@ At this moment, there are no default styles for the popup. Your views will inher
 * During the `Tapped` event, you can determine if the user tapped within the header, body, or footer sections.
 
 ## Screenshots
-![alt text](https://github.com/michaeled/FormsPopup/blob/master/pictures/androidPopup.gif "Android")
-![alt text](https://github.com/michaeled/FormsPopup/blob/master/pictures/iOSPopup.gif "iOS")
+![alt text](pictures/androidPopup.gif "Android")
+![alt text](pictures/iOSPopup.gif "iOS")
 
 
 More screenshots are available in the repository.
