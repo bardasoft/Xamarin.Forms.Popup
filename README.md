@@ -316,14 +316,9 @@ More screenshots are available in the repository.
 
 My name is Stefan M. Marek and i develop Software for the Austian Post and for myself ;).
 
-please also visit my personal page:
-
-<p align="center">
-<a href="https://marekworks.at">
-	<img src="https://marekworks.at/images/logo_small.svg"><br/>
-	Marekworks.at
-</a>
-</p>
+| please also visit my personal page: |
+| :--: |
+| [![marekworks.at](https://marekworks.at/images/logo_small.svg "marekworks.at")<br/>Marekworks.at](https://marekworks.at) |
 
 ## FAQ
 
