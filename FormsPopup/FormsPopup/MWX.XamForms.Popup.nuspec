@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MWX.XamForms.Popup</id>
+    <version>$version$</version>
+    <title>MWX.XamForms.Popup</title>
+    <authors>Mareworks.at - Stefan M. Marek</authors>
+    <owners>Mareworks.at - Stefan M. Marek</owners>
+    <licenseUrl>https://github.com/lightwaver/Xamarin.Forms.Popup/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/lightwaver/Xamarin.Forms.Popup</projectUrl>
+    <iconUrl>http://marekworks.at/images/logo_marekworks_64x64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>contains the implemetation of a fully implemeted Popup Control and templatable Picker for Xamarin Forms</description>
+    <copyright>Copyright 2017</copyright>
+    <tags>Xamarin Xamarin.Forms Popup Control Picker Templates</tags>
+  </metadata>
+</package>
