@@ -318,7 +318,10 @@ My name is Stefan M. Marek and i develop Software for the Austian Post and for m
 
 please also visit my personal page:
 
-[![marekworks.at](https://marekworks.at/images/logo_small.svg "marekworks.at")<br/>Marekworks.at](https://marekworks.at) {style="text-align:center"}
+<p align="center">
+<img src="https://marekworks.at/images/logo_small.svg"><br/>
+Marekworks.at
+</p>
 
 ## FAQ
 
