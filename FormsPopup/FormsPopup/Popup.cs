@@ -279,7 +279,21 @@ namespace MWX.XamForms.Popup
 
         public ICommand ShowHideCommand { get; private set; }
 
-		public Popup()
+
+        public static BindableProperty ShowHideFunctionProperty = BindableProperty.Create(nameof(ShowHideFunction), typeof(Action<bool>), typeof(Popup), defaultValue: null, defaultBindingMode: BindingMode.OneWayToSource);
+        /// <summary>
+        /// Function Delegate in the the ViewModel to Show/Hide the PopUp
+        /// </summary>
+        public Action<bool> ShowHideFunction { get { return (Action<bool>)GetValue(ShowHideFunctionProperty); } set { SetValue(ShowHideFunctionProperty, value); } }
+
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+
+            ShowHideFunction = b => ShowHide(b);
+        }
+
+        public Popup()
 		{
 			IsVisible = false;
 			_sectionContainer.BindingContext = this;
@@ -376,6 +390,14 @@ namespace MWX.XamForms.Popup
 
         private void ShowHide(object obj)
         {
+            if (obj is bool show)
+            {
+                if (show && IsVisible) return;
+                if (show && !IsVisible) Hide();
+                else if (!show && IsVisible) Hide();
+                else return;
+            }
+
             if (IsVisible) Hide();
             else Show();
         }

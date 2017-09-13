@@ -1,23 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ex:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MWX.XamForms.Popup.Examples.ComplexLayoutExample"
-             	xmlns:ex="clr-namespace:MWX.XamForms.Popup;assembly=MWX.XamForms.Popup">
-  
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="MWX.XamForms.Popup.Examples.ComplexLayoutExample"
+             	xmlns:ex="clr-namespace:MWX.XamForms.Popup;assembly=MWX.XamForms.Popup"
+              x:Name="myPage">
+
   <StackLayout>
     <Button Text="Show Popup" Clicked="Button_OnClicked"></Button>
+    <Button Text="Show Popup Delegate" Clicked="Button_Delegate_OnClicked"></Button>
     <Button Text="Back to Examples" Clicked="Back_OnClicked"/>
 
     <Button Text="Show/Hide Bound" Command="{Binding ShowHideCommand, Source={x:Reference popup1} }" />
   </StackLayout>
   <ex:PopupPage.Popups>
-    
-    <ex:Popup x:Name="popup1"
+    <ex:Popup x:Name="popup1" BindingContext="{x:Reference popup1}"
               XPositionRequest="0.5"
               YPositionRequest="0.5"
               ContentWidthRequest="0.8"
               ContentHeightRequest="0.5"
-              Tapped="Popup1_Tapped">
+              Tapped="Popup1_Tapped"
+              ShowHideFunction="{Binding ShowHidePopUp, Source={x:Reference myPage}}"
+              >
 
       <ex:Popup.Header>
         <Grid Padding="10" BackgroundColor="#0F96BE">
