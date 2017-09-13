@@ -154,6 +154,24 @@ See the ComplexLayoutExample - you can simply bind it to the **ShowHideCommand**
     <ex:Popup x:Name="popup1" ... />
 ```
 
+optionally you can provide a command-parameter that indicates if it should be opened or closed - if no parameter is provided it's toggled.
+
+### Open PopUp from ViewModel
+
+Also shown in the ComplexLayoutExample - The ViewModel can provide a Property of the type ***Action\<bool\>***, which is bound to the Property ***ShowHideFunction***.
+Then this Delegate is set from the Control, which enables the ViewModel - or whatever is bound to it - to Show or Hide the PopUp.
+
+A sample for the property in the ViewModel:
+```csharp
+    public Action<bool> ShowHidePopUp { get; set; }
+```
+
+And the Binding in the Xaml:
+```xaml
+    ShowHideFunction="{Binding ShowHidePopUp}"
+```
+
+
 
 ## Dynamic Content
 
