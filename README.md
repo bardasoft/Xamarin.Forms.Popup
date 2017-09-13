@@ -7,7 +7,13 @@ It's inspired and based on the FormsPopUp implementation of Michael Davis - http
 
 But i fixed some issues and extended it with an TemplatedPicker, which is correctly bindable and doesnt use any platformspecific components.
 
-**NuGet**
+
+Build State: ![alt text](https://mareks.visualstudio.com/_apis/public/build/definitions/b84582dc-7436-45e7-ac40-fa51eb92dc9a/13/badge "build state")
+
+**NuGet** 
+
+Released: [![NuGet Badge](https://buildstats.info/nuget/MWX.XamForms.Popup)](https://www.nuget.org/packages/MWX.XamForms.Popup/)
+Pre-Release: [![NuGet Badge](https://buildstats.info/nuget/MWX.XamForms.Popup?includePreReleases=true)](https://www.nuget.org/packages/MWX.XamForms.Popup/)
 
 The Control Library is available as NuGet Package MWX.XamForms.Popup here https://www.nuget.org/packages/MWX.XamForms.Popup/
 
@@ -50,10 +56,13 @@ At first you need to import the namespace as a xmlns for the use in your Xaml.
 
 The templated Picker is a full featured Picker, where you can use Templates for the Items in Selected View and the Popup ListBox.
 
-some Screenshors of the Picker in the SampleApp:
+some Screenshots of the Picker in the SampleApp:
 
-![alt text](pictures/PickerExamples-Empty.png "Examples without Selection")
-![alt text](pictures/PickerExamples-Selection.png "Examples with Selection")
+- Examples-Page without Selection
+![Examples without Selection](pictures/PickerExamples-Empty.png "Examples without Selection")
+
+- Examples-Page with Selection
+![Examples with Selection](pictures/PickerExamples-Selection.png "Examples with Selection")
 
 Here is a overview how the Picker is composed:
 
@@ -62,50 +71,55 @@ Here is a overview how the Picker is composed:
 ### Properties of the TemplatedPicker
 Here some of the Key Properties to Control:
 
-#### Templates:
+#### Template-Properties:
 
-- CellTemplate - defines the Style of one Item in the SelectedView and in the ListBox.
-- EmptyTemplate - defines what should be displayed when nothing is selected.
+| Property  | Description |
+| ------------- | ------------- |
+| CellTemplate | defines the Style of one Item in the SelectedView and in the ListBox. |
+| EmptyTemplate | defines what should be displayed when nothing is selected. |
 
 #### Data-Properties:
 
-- SelectedItem - returns or sets the currently selected Item
-- ItemsSource - List of the selectable Items
+| Property  | Description |
+| ------------- | ------------- |
+| SelectedItem | returns or sets the currently selected Item |
+| ItemsSource | List of the selectable Items |
 
 #### Styling-Properties
 
-- PopUpWidthRequest - Relative Width of the PopUp ( between 0 .. 1 ) relative to the Page
-- PopUpHeightRequest - Relative Height of the PopUp ( between 0 .. 1 ) relative to the Page
-
-- HeaderBackgroundColor - BackgroundColor of the Header Part with the Title
-- HeaderText - Header Text
-- HeaderTextColor - Color of the Close Header-Text
-- HeaderPadding - Padding of the Header-Text
-- HeaderFontSize - Font Size of the Header-Text
-
-- DescriptionText - Text shown in the description
-- DescriptionFontSize - Font Size of the description
-
-- BodyPadding - Padding of the Body Content
-- BodyBackgroundColor - Background Color of the Body-Part with the 
-
-- ListViewRowHeight - Height of one Item
-
-- FooterBackgroundColor - Background color of the Footer-Part
-
-- UnSelectButtonVisible - true if the UnSelectButton (for no selection) should be visible
-- UnSelectButtonText - Text of the Unselect-Button
-- UnSelectButtonTextColor - TextColor of the Unselect-Button
-- UnSelectButtonBackgroundColor - Background Color of the Unselect-Button
-
-
-- CloseButtonText - Text of the Close Button
-- CloseButtonTextColor - Color of the Close Button-Text
-
-- SelectedOutlineColor - Outline Color of the selected Item (when the Picker is closed)
-- SelectedBackgroundColor - Background Color of the selected Item 
-
-- EmptyText - Text that should be displayed when no item is selected and no EmptyTemplate is provided.
+| Property  | Description |
+| ------------- | ------------- |
+| PopUpWidthRequest | Relative Width of the PopUp ( between 0 .. 1 ) relative to the Page |
+| PopUpHeightRequest | Relative Height of the PopUp ( between 0 .. 1 ) relative to the Page |
+| HeaderBackgroundColor | BackgroundColor of the Header Part with the Title |
+|  |  |
+| HeaderText | Header Text |
+| HeaderTextColor | Color of the Close Header-Text |
+| HeaderPadding | Padding of the Header-Text
+| HeaderFontSize | Font Size of the Header-Text
+|  |  |
+| DescriptionText | Text shown in the description
+| DescriptionFontSize | Font Size of the description
+|  |  |
+| BodyPadding | Padding of the Body Content
+| BodyBackgroundColor | Background Color of the Body-Part with the 
+|  |  |
+| ListViewRowHeight | Height of one Item
+|  |  |
+| FooterBackgroundColor | Background color of the Footer-Part
+|  |  |
+| UnSelectButtonVisible | true if the UnSelectButton (for no selection) should be visible
+| UnSelectButtonText | Text of the Unselect-Button
+| UnSelectButtonTextColor | TextColor of the Unselect-Button
+| UnSelectButtonBackgroundColor | Background Color of the Unselect-Button
+|  |  |
+| CloseButtonText | Text of the Close Button
+| CloseButtonTextColor | Color of the Close Button-Text
+|  |  |
+| SelectedOutlineColor | Outline Color of the selected Item (when the Picker is closed)
+| SelectedBackgroundColor | Background Color of the selected Item 
+|  |  |
+| EmptyText | Text that should be displayed when no item is selected and no EmptyTemplate is provided.
 
 
 ### MVVM
@@ -316,6 +330,14 @@ At this moment, there are no default styles for the popup. Your views will inher
 
 
 More screenshots are available in the repository.
+
+## Who am i?
+
+My name is Stefan M. Marek and i develop Software for the Austian Post and for myself ;).
+
+| please also visit my personal page: |
+| :--: |
+| [![marekworks.at](https://marekworks.at/images/logo_small.svg "marekworks.at")<br/>Marekworks.at](https://marekworks.at) |
 
 ## FAQ
 
