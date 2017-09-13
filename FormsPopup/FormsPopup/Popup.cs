@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MWX.XamForms.Popup
@@ -275,6 +277,8 @@ namespace MWX.XamForms.Popup
         #endregion
 
 
+        public ICommand ShowHideCommand { get; private set; }
+
 		public Popup()
 		{
 			IsVisible = false;
@@ -308,6 +312,8 @@ namespace MWX.XamForms.Popup
             // sizing section container. The overlay is not sized in this class.
             AbsoluteLayout.SetLayoutFlags(_sectionContainer, AbsoluteLayoutFlags.All);
             AbsoluteLayout.SetLayoutBounds(_sectionContainer, new Rectangle(0, 0, 1, 1));
+
+            ShowHideCommand = new Command(ShowHide);
 
             Initializing += OnPopupInitializing;
 
@@ -368,15 +374,20 @@ namespace MWX.XamForms.Popup
             Content = _popupView;
 		}
 
+        private void ShowHide(object obj)
+        {
+            if (IsVisible) Hide();
+            else Show();
+        }
 
-		/// <summary>
-		/// Show the popup view.
-		/// </summary>
+        /// <summary>
+        /// Show the popup view.
+        /// </summary>
         /// <param name="animation">The method is passed the VisualElement that contains the body, header, and footer</param>
-		/// <remarks>
-		/// This method is not limited adding animations.
-		/// </remarks>
-		public async Task ShowAsync(Func<Popup, Task> animation)
+        /// <remarks>
+        /// This method is not limited adding animations.
+        /// </remarks>
+        public async Task ShowAsync(Func<Popup, Task> animation)
 		{
 			if (IsVisible)
 			{
@@ -415,9 +426,9 @@ namespace MWX.XamForms.Popup
 		/// </summary>
 		public void Show()
 		{
-            #pragma warning disable 4014
-			ShowAsync(null);
-            #pragma warning restore 4014
+#pragma warning disable 4014
+                ShowAsync(null);
+#pragma warning restore 4014
 		}
 
 

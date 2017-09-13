@@ -7,6 +7,8 @@
   <StackLayout>
     <Button Text="Show Popup" Clicked="Button_OnClicked"></Button>
     <Button Text="Back to Examples" Clicked="Back_OnClicked"/>
+
+    <Button Text="Show/Hide Bound" Command="{Binding ShowHideCommand, Source={x:Reference popup1} }" />
   </StackLayout>
   <ex:PopupPage.Popups>
     

@@ -130,6 +130,17 @@ You can fully bind it your ViewModel:
             </pop:TemplatedPicker>
 ```
 
+#### Open Popup via XAML
+
+See the ComplexLayoutExample - you can simply bind it to the **ShowHideCommand** of the popup.
+
+```xaml
+    <Button Text="Show/Hide Bound" Command="{Binding ShowHideCommand, Source={x:Reference popup1} }" />
+...
+    <ex:Popup x:Name="popup1" ... />
+```
+
+
 ## Dynamic Content
 
 If you want to use the Picker or a PopUp in a ListView or other dynamic Controls, you need to embed it into a PopupPage or use a PopUpInitializer directly on the Page to initialize the PopUp.

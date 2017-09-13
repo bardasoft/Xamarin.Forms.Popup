@@ -47,14 +47,14 @@ namespace MWX.XamForms.Popup.Examples.ViewModels
                 },
                 new PickerItem
                 {
-                    Index = 3,
+                    Index = 4,
                     Name = "NavigationExample",
                     Description = "Example in an NavigationPage",
                     Page2Show = new NavigationPage(new NavigationExample())
                 },
                 new PickerItem
                 {
-                    Index = 4,
+                    Index = 5,
                     Name = "TemplatedPicker",
                     Description = "Example for the TemplatedPicker",
                     Page2Show = new TemplatedPickerExample()
@@ -62,7 +62,7 @@ namespace MWX.XamForms.Popup.Examples.ViewModels
                 },
                 new PickerItem
                 {
-                    Index = 4,
+                    Index = 6,
                     Name = "Picker in ListView",
                     Description = "Example for the TemplatedPicker in a ListView",
                     Page2Show = new TemplatedPickerList()
