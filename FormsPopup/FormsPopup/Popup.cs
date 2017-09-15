@@ -392,8 +392,7 @@ namespace MWX.XamForms.Popup
         {
             if (obj is bool show)
             {
-                if (show && IsVisible) return;
-                if (show && !IsVisible) Hide();
+                if (show && !IsVisible) Show();
                 else if (!show && IsVisible) Hide();
 
                 return;
@@ -409,7 +408,7 @@ namespace MWX.XamForms.Popup
             Scale
         }
 
-        public PopUpAnimation DefaultAnimation { get; set; } = PopUpAnimation.Scale;
+        public PopUpAnimation DefaultAnimation { get; set; }
 
         private Func<Popup, Task> GetDefaultShowAnimation()
         {
