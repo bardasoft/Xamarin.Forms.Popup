@@ -25,9 +25,12 @@ namespace MWX.XamForms.Popup.Examples
             popup1.Hide();
         }
 
+        bool show = true;
+
         protected void Button_Delegate_OnClicked(object sender, EventArgs e)
         {
-            ShowHidePopUp(true);
+            show ^= true;
+            ShowHidePopUp(show);
         }
 
         public Action<bool> ShowHidePopUp { get; set; }

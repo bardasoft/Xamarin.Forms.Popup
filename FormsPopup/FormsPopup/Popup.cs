@@ -395,12 +395,86 @@ namespace MWX.XamForms.Popup
                 if (show && IsVisible) return;
                 if (show && !IsVisible) Hide();
                 else if (!show && IsVisible) Hide();
-                else return;
+
+                return;
             }
 
             if (IsVisible) Hide();
             else Show();
         }
+
+        public enum PopUpAnimation
+        {
+            None,
+            Scale
+        }
+
+        public PopUpAnimation DefaultAnimation { get; set; } = PopUpAnimation.Scale;
+
+        private Func<Popup, Task> GetDefaultShowAnimation()
+        {
+            switch (DefaultAnimation)
+            {
+                case PopUpAnimation.Scale:
+                    return async p =>
+                    {
+                        var original = p.Scale;
+
+                        p.SectionContainer.Scale = 0.05d;
+                        await Task.WhenAll
+                        (
+                            /** 
+                             *  Since p is the Popup object, scaling it would also affect the overlay
+                             *  behind the popup's body. Although it wouldn't be noticeable in this simple example,
+                             *  it would be if the overlay's color was set.
+                            **/
+                            //p.SectionContainer.RelScaleTo(original, 100, Easing.CubicOut),
+                            p.SectionContainer.RelScaleTo(original, 105, Easing.CubicOut)
+                        ).ContinueWith(c =>
+                        {
+                            Device.BeginInvokeOnMainThread(() =>
+                            {
+                                // reset popup to original size
+                                p.SectionContainer.Scale = original;
+                            });
+                        });
+                    };
+                default:
+                    break;
+            }
+            return null;
+        }
+
+        private Func<Popup, Task> GetDefaultHideAnimation()
+        {
+            switch (DefaultAnimation)
+            {
+                case PopUpAnimation.Scale:
+                    return async p =>
+                    {
+                        var original = p.Scale;
+
+                        await Task.WhenAll
+                        (
+                            /** 
+                             *  Since p is the Popup object, scaling it would also affect the overlay
+                             *  behind the popup's body. Although it wouldn't be noticeable in this simple example,
+                             *  it would be if the overlay's color was set.
+                            **/
+
+                            p.SectionContainer.RelScaleTo(0.05, 100, Easing.CubicOut),
+                            p.SectionContainer.RelScaleTo(-0.05, 105, Easing.CubicOut)
+                        ).ContinueWith(c =>
+                        {   // reset popup to original size
+                            p.SectionContainer.Scale = original;
+                        });
+                    };
+                default:
+                    break;
+            }
+            return null;
+        }
+
 
         /// <summary>
         /// Show the popup view.
@@ -416,6 +490,8 @@ namespace MWX.XamForms.Popup
 				return;
 			}
 
+            if (animation == null) animation = GetDefaultShowAnimation();
+
 			var parent = Parent.FindParent<Layout>();
             if (parent == null) throw new PopUpNotInitializedException();
 
@@ -428,8 +504,13 @@ namespace MWX.XamForms.Popup
 			}
 
 			IsVisible = true;
+            ForceLayout();
 
-			if (animation == null)
+            var p = this.Parent;
+            while (!(p is Layout) && p != null) p = p.Parent;
+            (p as Layout)?.ForceLayout();
+
+            if (animation == null)
 			{
 				await Task.FromResult(0);
 			}
@@ -486,8 +567,9 @@ namespace MWX.XamForms.Popup
 			}
 
             IsVisible = false;
+            ForceLayout();
 
-			OnHidden();
+            OnHidden();
 		}
 
 

@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\FormsPopup"
+    "\\FormsPopup",
+    "\\FormsPopup\\FormsPopup.Examples"
   ],
   "SelectedNode": "\\MWX.XamForms.Popup.sln",
   "PreviewInSolutionExplorer": false
