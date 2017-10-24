@@ -6,27 +6,27 @@ using Xamarin.Forms;
 
 namespace MWX.XamForms.Popup
 {
-	/// <summary>
-	/// Popup view to be displayed over a <see cref="ContentPage"/>.
-	/// </summary>
-	/// <remarks>
-	/// No default styles have been created for this view.
-	/// </remarks>
-	public class Popup : ContentView
-	{
-		private readonly AbsoluteLayout _popupView = new AbsoluteLayout();
+    /// <summary>
+    /// Popup view to be displayed over a <see cref="ContentPage"/>.
+    /// </summary>
+    /// <remarks>
+    /// No default styles have been created for this view.
+    /// </remarks>
+    public class Popup : ContentView
+    {
+        private readonly AbsoluteLayout _popupView = new AbsoluteLayout();
         private readonly RelativeLayout _sectionContainer = new RelativeLayout();
 
-		private readonly ContentView _headerSection = new ContentView();
-		private readonly ContentView _bodySection = new ContentView();
-		private readonly ContentView _footerSection = new ContentView();
+        private readonly ContentView _headerSection = new ContentView();
+        private readonly ContentView _bodySection = new ContentView();
+        private readonly ContentView _footerSection = new ContentView();
 
-		private readonly BoxView _leftBorder = new BoxView();
-		private readonly BoxView _rightBorder = new BoxView();
-		private readonly BoxView _topBorder = new BoxView();
-		private readonly BoxView _bottomBorder = new BoxView();
+        private readonly BoxView _leftBorder = new BoxView();
+        private readonly BoxView _rightBorder = new BoxView();
+        private readonly BoxView _topBorder = new BoxView();
+        private readonly BoxView _bottomBorder = new BoxView();
 
-		private const double BorderWidth = 1;
+        private const double BorderWidth = 1;
 
 
         /// <summary>
@@ -35,172 +35,172 @@ namespace MWX.XamForms.Popup
         public VisualElement SectionContainer => _sectionContainer;
 
 
-	    #region Events
+        #region Events
 
 
-		public event EventHandler<PopupTappedEventArgs> Tapped;
-		public event EventHandler<EventArgs> Initializing;
-		public event EventHandler<PopupShowingEventArgs> Showing;
-		public event EventHandler<EventArgs> Shown;
+        public event EventHandler<PopupTappedEventArgs> Tapped;
+        public event EventHandler<EventArgs> Initializing;
+        public event EventHandler<PopupShowingEventArgs> Showing;
+        public event EventHandler<EventArgs> Shown;
 
-		public event EventHandler<PopupHidingEventArgs> Hiding;
-		public event EventHandler<EventArgs> Hidden;
+        public event EventHandler<PopupHidingEventArgs> Hiding;
+        public event EventHandler<EventArgs> Hidden;
 
 
-		protected virtual void OnPropertyTapped(PopupTappedEventArgs e)
-		{
+        protected virtual void OnPropertyTapped(PopupTappedEventArgs e)
+        {
             Tapped?.Invoke(this, e);
         }
 
 
-		protected internal virtual void OnInitializing()
-		{
-		    Initializing?.Invoke(this, EventArgs.Empty);
-		}
+        protected internal virtual void OnInitializing()
+        {
+            Initializing?.Invoke(this, EventArgs.Empty);
+        }
 
 
-		protected virtual PopupShowingEventArgs OnShowing()
-		{
-			var args = new PopupShowingEventArgs();
-		    Showing?.Invoke(this, args);
-		    return args;
-		}
+        protected virtual PopupShowingEventArgs OnShowing()
+        {
+            var args = new PopupShowingEventArgs();
+            Showing?.Invoke(this, args);
+            return args;
+        }
 
 
-		protected virtual void OnShown()
-		{
+        protected virtual void OnShown()
+        {
             Shown?.Invoke(this, EventArgs.Empty);
-		}
+        }
 
 
-		protected virtual PopupHidingEventArgs OnHiding()
-		{
-			var args = new PopupHidingEventArgs();
+        protected virtual PopupHidingEventArgs OnHiding()
+        {
+            var args = new PopupHidingEventArgs();
             Hiding?.Invoke(this, args);
-			return args;
-		}
+            return args;
+        }
 
 
-		protected virtual void OnHidden()
-		{
-			Hidden?.Invoke(this, EventArgs.Empty);
-		}
+        protected virtual void OnHidden()
+        {
+            Hidden?.Invoke(this, EventArgs.Empty);
+        }
 
 
-		#endregion
+        #endregion
 
 
-		#region Dependency Properties
+        #region Dependency Properties
 
 
-		public static readonly BindableProperty HeaderProperty = BindableProperty.Create(nameof(Header), typeof(View), typeof(Popup), null, propertyChanged: OnHeaderPropertyChanged);
-	    public static readonly BindableProperty BodyProperty = BindableProperty.Create(nameof(Body), typeof (View), typeof (Popup), null, propertyChanged: OnBodyPropertyChanged);
-	    public static readonly BindableProperty FooterProperty = BindableProperty.Create(nameof(Footer), typeof (View), typeof (Popup), null, propertyChanged: OnFooterPropertyChanged);
+        public static readonly BindableProperty HeaderProperty = BindableProperty.Create(nameof(Header), typeof(View), typeof(Popup), null, propertyChanged: OnHeaderPropertyChanged);
+        public static readonly BindableProperty BodyProperty = BindableProperty.Create(nameof(Body), typeof(View), typeof(Popup), null, propertyChanged: OnBodyPropertyChanged);
+        public static readonly BindableProperty FooterProperty = BindableProperty.Create(nameof(Footer), typeof(View), typeof(Popup), null, propertyChanged: OnFooterPropertyChanged);
 
-        public static readonly BindableProperty XPositionRequestProperty = BindableProperty.Create(nameof(XPositionRequest), typeof (double), typeof (Popup), default(double), propertyChanged: OnPositionChanged);
-	    public static readonly BindableProperty YPositionRequestProperty = BindableProperty.Create(nameof(XPositionRequest), typeof (double), typeof (Popup), default(double), propertyChanged: OnPositionChanged);
+        public static readonly BindableProperty XPositionRequestProperty = BindableProperty.Create(nameof(XPositionRequest), typeof(double), typeof(Popup), default(double), propertyChanged: OnPositionChanged);
+        public static readonly BindableProperty YPositionRequestProperty = BindableProperty.Create(nameof(XPositionRequest), typeof(double), typeof(Popup), default(double), propertyChanged: OnPositionChanged);
 
-	    public static readonly BindableProperty LeftBorderColorProperty = BindableProperty.Create(nameof(LeftBorderColor), typeof (Color), typeof (Popup), Color.Transparent, propertyChanged: OnLeftBorderChanged);
-	    public static readonly BindableProperty RightBorderColorProperty = BindableProperty.Create(nameof(RightBorderColor), typeof (Color), typeof (Popup), Color.Transparent, propertyChanged: OnRightBorderChanged);
-	    public static readonly BindableProperty TopBorderColorProperty = BindableProperty.Create(nameof(TopBorderColor), typeof (Color), typeof (Popup), Color.Transparent, propertyChanged: OnTopBorderChanged);
-	    public static readonly BindableProperty BottomBorderColorProperty = BindableProperty.Create(nameof(BottomBorderColor), typeof (Color), typeof (Popup), Color.Transparent, propertyChanged: OnBottomBorderChanged);
-
-
-	    public static readonly BindableProperty ContentWidthRequestProperty = BindableProperty.Create(nameof(ContentWidthRequest), typeof (double), typeof (Popup), default(double), propertyChanged: OnPositionChanged);
-	    public static readonly BindableProperty ContentHeightRequestProperty = BindableProperty.Create(nameof(ContentHeightRequest), typeof (double), typeof (Popup), default(double), propertyChanged: OnPositionChanged);
-
-	    internal static readonly BindableProperty SectionTypeProperty = BindableProperty.CreateAttached("SectionType", typeof (PopupSectionType), typeof (Popup), PopupSectionType.NotSet);
+        public static readonly BindableProperty LeftBorderColorProperty = BindableProperty.Create(nameof(LeftBorderColor), typeof(Color), typeof(Popup), Color.Transparent, propertyChanged: OnLeftBorderChanged);
+        public static readonly BindableProperty RightBorderColorProperty = BindableProperty.Create(nameof(RightBorderColor), typeof(Color), typeof(Popup), Color.Transparent, propertyChanged: OnRightBorderChanged);
+        public static readonly BindableProperty TopBorderColorProperty = BindableProperty.Create(nameof(TopBorderColor), typeof(Color), typeof(Popup), Color.Transparent, propertyChanged: OnTopBorderChanged);
+        public static readonly BindableProperty BottomBorderColorProperty = BindableProperty.Create(nameof(BottomBorderColor), typeof(Color), typeof(Popup), Color.Transparent, propertyChanged: OnBottomBorderChanged);
 
 
-		public View Header
-		{
-			get { return (View)GetValue(HeaderProperty); }
-			set
-			{
-				SetValue(HeaderProperty, value);
-				_headerSection.Content = value;
-			}
-		}
+        public static readonly BindableProperty ContentWidthRequestProperty = BindableProperty.Create(nameof(ContentWidthRequest), typeof(double), typeof(Popup), default(double), propertyChanged: OnPositionChanged);
+        public static readonly BindableProperty ContentHeightRequestProperty = BindableProperty.Create(nameof(ContentHeightRequest), typeof(double), typeof(Popup), default(double), propertyChanged: OnPositionChanged);
 
-		public View Body
-		{
-			get { return (View)GetValue(BodyProperty); }
-			set
-			{
-				SetValue(BodyProperty, value);
-				_bodySection.Content = value;
-			}
-		}
+        internal static readonly BindableProperty SectionTypeProperty = BindableProperty.CreateAttached("SectionType", typeof(PopupSectionType), typeof(Popup), PopupSectionType.NotSet);
 
 
-		public View Footer
-		{
-			get { return (View)GetValue(FooterProperty); }
-			set
-			{
-				SetValue(FooterProperty, value);
-				_footerSection.Content = value;
-			}
-		}
+        public View Header
+        {
+            get { return (View)GetValue(HeaderProperty); }
+            set
+            {
+                SetValue(HeaderProperty, value);
+                _headerSection.Content = value;
+            }
+        }
+
+        public View Body
+        {
+            get { return (View)GetValue(BodyProperty); }
+            set
+            {
+                SetValue(BodyProperty, value);
+                _bodySection.Content = value;
+            }
+        }
 
 
-		public double XPositionRequest
-		{
-			get { return (double)GetValue(XPositionRequestProperty); }
-			set { SetValue(XPositionRequestProperty, value); }
-		}
+        public View Footer
+        {
+            get { return (View)GetValue(FooterProperty); }
+            set
+            {
+                SetValue(FooterProperty, value);
+                _footerSection.Content = value;
+            }
+        }
 
 
-		public double YPositionRequest
-		{
-			get { return (double)GetValue(YPositionRequestProperty); }
-			set { SetValue(YPositionRequestProperty, value); }
-		}
+        public double XPositionRequest
+        {
+            get { return (double)GetValue(XPositionRequestProperty); }
+            set { SetValue(XPositionRequestProperty, value); }
+        }
 
 
-		public Color LeftBorderColor
-		{
-			get { return (Color)GetValue(LeftBorderColorProperty); }
-			set { SetValue(LeftBorderColorProperty, value); }
-		}
+        public double YPositionRequest
+        {
+            get { return (double)GetValue(YPositionRequestProperty); }
+            set { SetValue(YPositionRequestProperty, value); }
+        }
 
 
-		public Color RightBorderColor
-		{
-			get { return (Color)GetValue(RightBorderColorProperty); }
-			set { SetValue(RightBorderColorProperty, value); }
-		}
+        public Color LeftBorderColor
+        {
+            get { return (Color)GetValue(LeftBorderColorProperty); }
+            set { SetValue(LeftBorderColorProperty, value); }
+        }
 
 
-		public Color TopBorderColor
-		{
-			get { return (Color)GetValue(TopBorderColorProperty); }
-			set { SetValue(TopBorderColorProperty, value); }
-		}
+        public Color RightBorderColor
+        {
+            get { return (Color)GetValue(RightBorderColorProperty); }
+            set { SetValue(RightBorderColorProperty, value); }
+        }
 
 
-		public Color BottomBorderColor
-		{
-			get { return (Color)GetValue(BottomBorderColorProperty); }
-			set { SetValue(BottomBorderColorProperty, value); }
-		}
+        public Color TopBorderColor
+        {
+            get { return (Color)GetValue(TopBorderColorProperty); }
+            set { SetValue(TopBorderColorProperty, value); }
+        }
 
 
-		public double ContentWidthRequest
-		{
-			get { return (double)GetValue(ContentWidthRequestProperty); }
-			set { SetValue(ContentWidthRequestProperty, value); }
-		}
+        public Color BottomBorderColor
+        {
+            get { return (Color)GetValue(BottomBorderColorProperty); }
+            set { SetValue(BottomBorderColorProperty, value); }
+        }
 
 
-		public double ContentHeightRequest
-		{
-			get { return (double)GetValue(ContentHeightRequestProperty); }
-			set { SetValue(ContentHeightRequestProperty, value); }
-		}
+        public double ContentWidthRequest
+        {
+            get { return (double)GetValue(ContentWidthRequestProperty); }
+            set { SetValue(ContentWidthRequestProperty, value); }
+        }
 
 
-		#endregion
+        public double ContentHeightRequest
+        {
+            get { return (double)GetValue(ContentHeightRequestProperty); }
+            set { SetValue(ContentHeightRequestProperty, value); }
+        }
+
+
+        #endregion
 
 
         #region Dependency Properties Changing
@@ -243,7 +243,7 @@ namespace MWX.XamForms.Popup
             var popup = (Popup)bindable;
             if (popup == null) return;
 
-            popup._leftBorder.BackgroundColor = (Color) newvalue;
+            popup._leftBorder.BackgroundColor = (Color)newvalue;
         }
 
 
@@ -252,7 +252,7 @@ namespace MWX.XamForms.Popup
             var popup = (Popup)bindable;
             if (popup == null) return;
 
-            popup._rightBorder.BackgroundColor = (Color) newvalue;
+            popup._rightBorder.BackgroundColor = (Color)newvalue;
         }
 
 
@@ -261,7 +261,7 @@ namespace MWX.XamForms.Popup
             var popup = (Popup)bindable;
             if (popup == null) return;
 
-            popup._topBorder.BackgroundColor = (Color) newvalue;
+            popup._topBorder.BackgroundColor = (Color)newvalue;
         }
 
 
@@ -270,7 +270,7 @@ namespace MWX.XamForms.Popup
             var popup = (Popup)bindable;
             if (popup == null) return;
 
-            popup._bottomBorder.BackgroundColor = (Color) newvalue;
+            popup._bottomBorder.BackgroundColor = (Color)newvalue;
         }
 
 
@@ -278,6 +278,7 @@ namespace MWX.XamForms.Popup
 
 
         public ICommand ShowHideCommand { get; private set; }
+        public ICommand ShowAndBindCommand { get; private set; }
 
 
         public static BindableProperty ShowHideFunctionProperty = BindableProperty.Create(nameof(ShowHideFunction), typeof(Action<bool>), typeof(Popup), defaultValue: null, defaultBindingMode: BindingMode.OneWayToSource);
@@ -294,10 +295,10 @@ namespace MWX.XamForms.Popup
         }
 
         public Popup()
-		{
-			IsVisible = false;
-			_sectionContainer.BindingContext = this;
-		    _sectionContainer.Padding = 0;
+        {
+            IsVisible = false;
+            _sectionContainer.BindingContext = this;
+            _sectionContainer.Padding = 0;
             _popupView.Padding = 0;
             _bodySection.VerticalOptions = LayoutOptions.FillAndExpand;
 
@@ -310,10 +311,10 @@ namespace MWX.XamForms.Popup
 
 
             // Used to assign border colors
-			_leftBorder.SetBinding(BackgroundColorProperty, Binding.Create((Popup p) => p.LeftBorderColor));
-			_rightBorder.SetBinding(BackgroundColorProperty, Binding.Create((Popup p) => p.RightBorderColor));
-			_bottomBorder.SetBinding(BackgroundColorProperty, Binding.Create((Popup p) => p.BottomBorderColor));
-			_topBorder.SetBinding(BackgroundColorProperty, Binding.Create((Popup p) => p.TopBorderColor));
+            _leftBorder.SetBinding(BackgroundColorProperty, Binding.Create((Popup p) => p.LeftBorderColor));
+            _rightBorder.SetBinding(BackgroundColorProperty, Binding.Create((Popup p) => p.RightBorderColor));
+            _bottomBorder.SetBinding(BackgroundColorProperty, Binding.Create((Popup p) => p.BottomBorderColor));
+            _topBorder.SetBinding(BackgroundColorProperty, Binding.Create((Popup p) => p.TopBorderColor));
 
 
             // Adjust the layout bounds (not the overlay)
@@ -328,31 +329,32 @@ namespace MWX.XamForms.Popup
             AbsoluteLayout.SetLayoutBounds(_sectionContainer, new Rectangle(0, 0, 1, 1));
 
             ShowHideCommand = new Command(ShowHide);
+            ShowAndBindCommand = new Command(ShowAndBind);
 
             Initializing += OnPopupInitializing;
 
 
             // Create the content
-		    var content = new StackLayout
-		    {
-		        Padding = 0,
-		        Spacing = 0,
-		        Orientation = StackOrientation.Vertical,
+            var content = new StackLayout
+            {
+                Padding = 0,
+                Spacing = 0,
+                Orientation = StackOrientation.Vertical,
 
-		        Children =
-		        {
-		            _headerSection,
-		            _bodySection,
-		            _footerSection
-		        }
-		    };
+                Children =
+                {
+                    _headerSection,
+                    _bodySection,
+                    _footerSection
+                }
+            };
 
             _popupView.Children.Add(_sectionContainer);
 
 
             // Position content
-            _sectionContainer.Children.Add(content, 
-                Constraint.Constant(XPositionRequest), 
+            _sectionContainer.Children.Add(content,
+                Constraint.Constant(XPositionRequest),
                 Constraint.Constant(YPositionRequest),
                 Constraint.RelativeToParent(p => p.Width),
                 Constraint.RelativeToParent(p => p.Height));
@@ -386,7 +388,16 @@ namespace MWX.XamForms.Popup
                 Constraint.Constant(BorderWidth));
 
             Content = _popupView;
-		}
+        }
+
+        private void ShowAndBind(object obj)
+        {
+            if (obj == null)
+                SectionContainer.BindingContext = this.BindingContext;
+            else
+                SectionContainer.BindingContext = obj;
+            ShowHide(true);
+        }
 
         private void ShowHide(object obj)
         {
@@ -483,26 +494,26 @@ namespace MWX.XamForms.Popup
         /// This method is not limited adding animations.
         /// </remarks>
         public async Task ShowAsync(Func<Popup, Task> animation)
-		{
-			if (IsVisible)
-			{
-				return;
-			}
+        {
+            if (IsVisible)
+            {
+                return;
+            }
 
             if (animation == null) animation = GetDefaultShowAnimation();
 
-			var parent = Parent.FindParent<Layout>();
+            var parent = Parent.FindParent<Layout>();
             if (parent == null) throw new PopUpNotInitializedException();
 
-		    parent?.RaiseChild(_popupView);
+            parent?.RaiseChild(_popupView);
 
-		    var handlerResponse = OnShowing();
-			if (handlerResponse.Cancel)
-			{
-				return;
-			}
+            var handlerResponse = OnShowing();
+            if (handlerResponse.Cancel)
+            {
+                return;
+            }
 
-			IsVisible = true;
+            IsVisible = true;
             ForceLayout();
 
             var p = this.Parent;
@@ -510,104 +521,104 @@ namespace MWX.XamForms.Popup
             (p as Layout)?.ForceLayout();
 
             if (animation == null)
-			{
-				await Task.FromResult(0);
-			}
-			else
-			{
+            {
+                await Task.FromResult(0);
+            }
+            else
+            {
                 // the overlay is not passed to the caller
-				await animation(this);
-			}
+                await animation(this);
+            }
 
-			OnShown();
-		}
+            OnShown();
+        }
 
 
-		/// <summary>
-		/// Show the popup view.
-		/// </summary>
-		public void Show()
-		{
+        /// <summary>
+        /// Show the popup view.
+        /// </summary>
+        public void Show()
+        {
 #pragma warning disable 4014
-                ShowAsync(null);
+            ShowAsync(null);
 #pragma warning restore 4014
-		}
+        }
 
 
-		/// <summary>
-		/// Hide the popup view.
-		/// </summary>
-		/// <param name="animation">The method is passed the VisualElement that contains the body, header, and footer</param>
-		/// <remarks>
-		/// This method is not limited adding animations.
-		/// </remarks>
+        /// <summary>
+        /// Hide the popup view.
+        /// </summary>
+        /// <param name="animation">The method is passed the VisualElement that contains the body, header, and footer</param>
+        /// <remarks>
+        /// This method is not limited adding animations.
+        /// </remarks>
         public async Task HideAsync(Func<Popup, Task> animation)
-		{
-			if (!IsVisible)
-			{
-				return;
-			}
+        {
+            if (!IsVisible)
+            {
+                return;
+            }
 
-			var handlerResponse = OnHiding();
+            var handlerResponse = OnHiding();
 
-			if (handlerResponse.Cancel)
-			{
-				return;
-			}
+            if (handlerResponse.Cancel)
+            {
+                return;
+            }
 
-			if (animation == null)
-			{
-				await Task.FromResult(0);
-			}
-			else
-			{
+            if (animation == null)
+            {
+                await Task.FromResult(0);
+            }
+            else
+            {
                 // the overlay is not passed to the caller
-				await animation(this);
-			}
+                await animation(this);
+            }
 
             IsVisible = false;
             ForceLayout();
 
             OnHidden();
-		}
+        }
 
 
-		/// <summary>
-		/// Hide the popup view.
-		/// </summary>
-		public void Hide()
-		{
-            #pragma warning disable 4014
-			HideAsync(null);
-            #pragma warning restore 4014
-		}
+        /// <summary>
+        /// Hide the popup view.
+        /// </summary>
+        public void Hide()
+        {
+#pragma warning disable 4014
+            HideAsync(null);
+#pragma warning restore 4014
+        }
 
 
-		private void OnPopupInitializing(object sender, EventArgs e)
-		{
-			Func<GestureRecognizer> factory = delegate
-			{
-				var closeOnTap = new TapGestureRecognizer();
+        private void OnPopupInitializing(object sender, EventArgs e)
+        {
+            Func<GestureRecognizer> factory = delegate
+            {
+                var closeOnTap = new TapGestureRecognizer();
 
-				var cmd = new Command(obj =>
-				{
-					var view = obj as View;
+                var cmd = new Command(obj =>
+                {
+                    var view = obj as View;
 
-					if (view == null)
-					{
-						return;
-					}
+                    if (view == null)
+                    {
+                        return;
+                    }
 
-					var evt = PopupTappedEventArgs.Create(this, view);
+                    var evt = PopupTappedEventArgs.Create(this, view);
 
-					OnPropertyTapped(evt);
-				});
+                    OnPropertyTapped(evt);
+                });
 
-				closeOnTap.Command = cmd;
-				return closeOnTap;
-			};
+                closeOnTap.Command = cmd;
+                return closeOnTap;
+            };
 
-			TapGestureRecognizerVisitor.Visit(_popupView, factory);
-		}
+            TapGestureRecognizerVisitor.Visit(_popupView, factory);
+        }
     }
 }

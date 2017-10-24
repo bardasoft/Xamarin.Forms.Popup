@@ -121,15 +121,6 @@ Simply create a <TemplatedPicker IsVisible=""False"" /> on directly your Content
         {
             if (cache.ContainsKey(page))
             {
-               return cache[page];
-            }
-            return null;
-        }
-
-        public static PopupPageInitializer GetPopUpInitializer(ContentPage page, Popup popup, bool lateInit)
-        {
-            if (cache.ContainsKey(page))
-            {
                 var init = cache[page];
                 init.Add(popup);
                 return init;

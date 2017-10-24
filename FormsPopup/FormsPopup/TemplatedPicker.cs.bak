@@ -599,6 +599,7 @@ namespace MWX.XamForms.Popup
         private async void Lv_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             await HidePopUp();
+
             this.SelectedItem = e.SelectedItem;
         }
 
