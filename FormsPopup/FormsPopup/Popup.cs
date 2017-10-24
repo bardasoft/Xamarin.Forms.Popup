@@ -393,9 +393,17 @@ namespace MWX.XamForms.Popup
         private void ShowAndBind(object obj)
         {
             if (obj == null)
-                SectionContainer.BindingContext = this.BindingContext;
+            {
+                Body.BindingContext = this.BindingContext;
+                Header.BindingContext = this.BindingContext;
+                Footer.BindingContext = this.BindingContext;
+            }
             else
-                SectionContainer.BindingContext = obj;
+            {
+                Header.BindingContext = obj;
+                Footer.BindingContext = obj;
+                Body.BindingContext = obj;
+            }
             ShowHide(true);
         }
 
