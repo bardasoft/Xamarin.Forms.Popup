@@ -9,7 +9,6 @@ using Xamarin.Forms.Xaml;
 
 namespace MWX.XamForms.Popup.Examples.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TemplatedPickerList : ContentPage
     {
         public TemplatedPickerList()

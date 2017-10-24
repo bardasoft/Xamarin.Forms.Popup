@@ -117,7 +117,7 @@ Simply create a <TemplatedPicker IsVisible=""False"" /> on directly your Content
         }
 
         static Dictionary<ContentPage, PopupPageInitializer> cache = new Dictionary<ContentPage, PopupPageInitializer>();
-        public static PopupPageInitializer GetPopUpInitializer(ContentPage page, Popup popup, bool lateInit)
+        public static PopupPageInitializer GetPopUpInitializer(ContentPage page)
         {
             if (cache.ContainsKey(page))
             {
