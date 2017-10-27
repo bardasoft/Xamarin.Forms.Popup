@@ -8,6 +8,7 @@
   <StackLayout>
     <Button Text="Show Popup" Clicked="Button_OnClicked"></Button>
     <Button Text="Show Popup Delegate" Clicked="Button_Delegate_OnClicked"></Button>
+    <Button Text="ShowAndBind" Command="{Binding ShowAndBindCommand, Source={x:Reference popup1}}" CommandParameter="{Binding Person}" ></Button>
     <Button Text="Back to Examples" Clicked="Back_OnClicked"/>
 
     <Button Text="Show/Hide Bound" Command="{Binding ShowHideCommand, Source={x:Reference popup1} }" />
@@ -40,8 +41,8 @@
 
       <ex:Popup.Body>
         <StackLayout Padding="10" BackgroundColor="#7D7D7D">
-          <Entry Placeholder="First Name" />
-          <Entry Placeholder="Last Name" />
+          <Entry Placeholder="First Name" Text="{Binding FirstName}" />
+          <Entry Placeholder="Last Name"  Text="{Binding LastName}"/>
 
           <Grid VerticalOptions="EndAndExpand">
             <Grid.RowDefinitions>

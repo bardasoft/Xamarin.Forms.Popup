@@ -4,9 +4,13 @@ namespace MWX.XamForms.Popup.Examples
 {
     public partial class ComplexLayoutExample
     {
+
+        public TestPerson Person { get; set; } = new TestPerson();
+
         public ComplexLayoutExample()
         {
             InitializeComponent();
+            BindingContext = this;
         }
 
         
@@ -35,5 +39,11 @@ namespace MWX.XamForms.Popup.Examples
 
         public Action<bool> ShowHidePopUp { get; set; }
 
+    }
+
+    public class TestPerson
+    {
+        public string FirstName { get; set; } = "Max";
+        public string LastName { get; set; } = "Mueller";
     }
 }

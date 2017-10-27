@@ -394,15 +394,15 @@ namespace MWX.XamForms.Popup
         {
             if (obj == null)
             {
-                Body.BindingContext = this.BindingContext;
-                Header.BindingContext = this.BindingContext;
-                Footer.BindingContext = this.BindingContext;
+                if (Body != null) Body.BindingContext = this.BindingContext;
+                if (Header != null) Header.BindingContext = this.BindingContext;
+                if (Footer != null) Footer.BindingContext = this.BindingContext;
             }
             else
             {
-                Header.BindingContext = obj;
-                Footer.BindingContext = obj;
-                Body.BindingContext = obj;
+                if (Body != null) Body.BindingContext = obj;
+                if (Header != null) Header.BindingContext = obj;
+                if (Footer != null) Footer.BindingContext = obj;
             }
             ShowHide(true);
         }
